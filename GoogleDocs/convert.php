@@ -5,10 +5,13 @@ if (!is_file('configure_me.php')) {
     exit;
 }
 
+if (empty($argv[1])) {
+    echo 'Usage: php convert.php source_path_file.doc > dest_path_file.pdf';
+    exit;
+}
+require_once 'configure_me.php';
+
 $fileToUpload = $argv[1];
-echo $fileToUpload;
-echo $user;
-echo $pass;
 
 require_once 'configure_me.php';
 require_once 'Zend/Loader.php';
@@ -19,10 +22,7 @@ $service = Zend_Gdata_Docs::AUTH_SERVICE_NAME;
 $client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
 $docs = new Zend_Gdata_Docs($client);
 
-$fileToUpload = 'sample.doc';
-$originalFileName = 'sample.doc';
 $newDocumentEntry = $docs->uploadFile($fileToUpload, null, null, Zend_Gdata_Docs::DOCUMENTS_LIST_FEED_URI);
-
 
 $sessionToken = $newDocumentEntry->service->getHttpClient()->getClientLoginToken();
 $filename = $newDocumentEntry->getContent()->getSrc() . '&exportFormat=pdf&format=pdf';
@@ -40,6 +40,3 @@ header('Content-type: application/pdf');
 header('Content-Disposition: attachment; filename="' . $fileToUpload . '.pdf"');
 $data = file_get_contents($filename, false, stream_context_create($opts));
 echo $data;
-
-
-
