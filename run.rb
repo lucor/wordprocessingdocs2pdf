@@ -6,7 +6,7 @@
 
 Dir.glob(File.dirname(__FILE__) + '/libs/*') {|file| require_relative file}
 
-Dir.mkdir(@root_out)
+Dir.mkdir(@root_out) unless File.exists?(@root_out)
 
 Dir.chdir(@root_src)
 source_files = Dir.glob("*")
