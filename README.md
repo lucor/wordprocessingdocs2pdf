@@ -23,6 +23,7 @@ Supported services and tools
   * The generated pdf are stored in the "output" folder
 
 * TestSuite
+
 You may use the doc collection test powered by the b2xtranslator project here:
 
 http://sourceforge.net/projects/b2xtranslator/files/b2xtranslator/Test%20Suite/Testsuite_doc2x.zip/download
