@@ -1,4 +1,4 @@
-wordprocessindocs2pdf
+wordprocessingdocs2pdf
 =====================
 
 The objective is to create a suite of scripts that helps to compare services, tools and library that
