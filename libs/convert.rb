@@ -1,10 +1,28 @@
+def Abiword(file)
+  file_name = 'Abiword-' + file + '.pdf'
+  src = @root_src + file
+  out = @root_out + file_name
+  puts "Trying to convert #{file} using Abiword"
+  command = 'abiword --to=' + out + ' ' + src
+  system(command)
+  if ($?.exitstatus == 0)
+    puts "./output/#{file_name} created"
+  else
+    puts "An error has been occurred during conversion."
+  end
+end
+
 def ConvertAPI(file)
   file_name = 'ConvertAPI-' + file + '.pdf'
   src = @root_src + file
   out = @root_out + file_name
   puts "Trying to convert #{file} using Convert API"
   system('curl -F file=@' + src + ' http://do.convertapi.com/Word2Pdf > ' + out)
-  puts "./output/#{file_name} created"
+  if ($?.exitstatus == 0)
+    puts "./output/#{file_name} created"
+  else
+    puts "An error has been occurred during conversion."
+  end
 end
 
 def GoogleDocs(file)
@@ -14,7 +32,11 @@ def GoogleDocs(file)
   Dir.chdir(@root_dir + '/GoogleDocs')
   puts "Trying to convert #{file} using GoogleDocs"
   system('php convert.php ' + src + ' > ' + out)
-  puts "./output/#{file_name} created"
+  if ($?.exitstatus == 0)
+    puts "./output/#{file_name} created"
+  else
+    puts "An error has been occurred during conversion."
+  end
 end
 
 def LibreOffice(file)
@@ -35,5 +57,9 @@ def LibreOffice(file)
   system(prefix_path + 'soffice --invisible --convert-to pdf --outdir ' + @root_out + ' ' + src)
   puts "Renaming generated file..."
   FileUtils.mv(temp_file, out)
-  puts "./output/#{file_name} created"
+  if ($?.exitstatus == 0)
+    puts "./output/#{file_name} created"
+  else
+    puts "An error has been occurred during conversion."
+  end
 end

@@ -12,6 +12,7 @@ Dir.chdir(@root_src)
 source_files = Dir.glob("*")
 
 source_files.each do |file|
+  Abiword(file)
   ConvertAPI(file)
   GoogleDocs(file)
   LibreOffice(file)
