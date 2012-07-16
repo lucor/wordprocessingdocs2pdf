@@ -1,5 +1,5 @@
 .idea
 *.komodoproject
 output/*
-source/*
+source/*.doc
 config.yml
