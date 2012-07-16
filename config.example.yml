@@ -1,0 +1,7 @@
+googledocs:
+    username: username@gmail.com
+    password: password
+
+saaspose:
+    appSID: theappSID
+    appKey: theappKey
