@@ -5,3 +5,7 @@ googledocs:
 saaspose:
     appSID: theappSID
     appKey: theappKey
+    
+doxument:
+    apiKey: theappKey
+    apiToken: theappToken

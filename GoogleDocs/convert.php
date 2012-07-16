@@ -1,25 +1,22 @@
 <?php
 
-if (!is_file('configure_me.php')) {
-    echo 'Cannot find configure_me.php. Please create it starting from configure_me.dist.php';
+if (empty($argv[3])) {
+    echo 'Usage: php convert.php username password source_path_file.doc > dest_path_file.pdf';
     exit;
 }
 
-if (empty($argv[1])) {
-    echo 'Usage: php convert.php source_path_file.doc > dest_path_file.pdf';
-    exit;
-}
-require_once 'configure_me.php';
+$username = $argv[1];
+$password = $argv[2];
+$fileToUpload = $argv[3];
 
-$fileToUpload = $argv[1];
 
-require_once 'configure_me.php';
+
 require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata_Docs');
 Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
 
 $service = Zend_Gdata_Docs::AUTH_SERVICE_NAME;
-$client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
+$client = Zend_Gdata_ClientLogin::getHttpClient($username, $password, $service);
 $docs = new Zend_Gdata_Docs($client);
 
 $newDocumentEntry = $docs->uploadFile($fileToUpload, null, null, Zend_Gdata_Docs::DOCUMENTS_LIST_FEED_URI);

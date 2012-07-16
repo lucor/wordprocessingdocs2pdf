@@ -11,14 +11,17 @@ converts word processing documents (doc, docx, odt, rtf) to pdf.
 Supported services and tools
 
 * Services
-  * Google Docs [http://www.google.com/apps/intl/it/business/docs.html]. Require: google app account, PHP 5.2.x or higher
   * Convert API [http://www.convertapi.com]. Require: curl
+  * Doxument [http://www.convertapi.com]. Require: doxument account
+  * Google Docs [http://www.google.com/apps/intl/it/business/docs.html]. Require: google app account, PHP 5.2.x or higher
+  * saaspose [http://saaspose.com/] Require: saaspose api keys, saasposesdk gem
     
 * Tools
   * LibreOffice [http://www.libreoffice.org]. Require: LibreOffice 3.x
   * Abiword [http://www.abisource.com]. Require: Abiword
 
 * Setup and Run
+  * Create a config.yml (needed to test some services, see config.example.yml)
   * Copy your .doc files in the "source" folder;
   * execute the run.rb file.
   * The generated pdf are stored in the "output" folder
