@@ -12,7 +12,7 @@ Supported services and tools
 
 * Services
   * Convert API [http://www.convertapi.com]. Require: curl
-  * Doxument [http://www.convertapi.com]. Require: doxument account
+  * Doxument [http://www.doxument.com]. Require: doxument account
   * Google Docs [http://www.google.com/apps/intl/it/business/docs.html]. Require: google app account, PHP 5.2.x or higher
   * Livedocx [http://www.livedocx.com]. Require: livedocx account
   * saaspose [http://saaspose.com/] Require: saaspose api keys, saasposesdk gem
