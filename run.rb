@@ -17,10 +17,11 @@ Dir.chdir(@root_src)
 source_files = Dir.glob("*.doc*")
 
 source_files.each do |file|
-  Abiword(file)
-  ConvertAPI(file)
-  doxument(file, config['doxument'])
-  GoogleDocs(file, config['googledocs'])
-  LibreOffice(file)
-  saaspose(file, config['saaspose'])
+  #Abiword(file)
+  #ConvertAPI(file)
+  #doxument(file, config['doxument'])
+  #GoogleDocs(file, config['googledocs'])
+  #LibreOffice(file)
+  #saaspose(file, config['saaspose'])
+  livedocx(file, config['livedocx'])
 end

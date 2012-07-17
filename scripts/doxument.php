@@ -1,7 +1,7 @@
 <?php
 
 if (empty($argv[4])) {
-    echo 'Usage: php convert.php apiKey apiToken source_path_file.doc dest_path_file.pdf';
+    echo 'Usage: php doxument.php apiKey apiToken source_path_file.doc dest_path_file.pdf';
     exit;
 }
 

@@ -9,3 +9,7 @@ saaspose:
 doxument:
     apiKey: theappKey
     apiToken: theappToken
+    
+livedocx:
+    username: username
+    password: password

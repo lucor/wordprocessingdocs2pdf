@@ -1,7 +1,7 @@
 <?php
 
 if (empty($argv[3])) {
-    echo 'Usage: php convert.php username password source_path_file.doc > dest_path_file.pdf';
+    echo 'Usage: php googledocs.php username password source_path_file.doc > dest_path_file.pdf';
     exit;
 }
 
